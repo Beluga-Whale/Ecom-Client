@@ -7,7 +7,9 @@ const Layout = () => {
     <div>
       <Navbar />
       <hr />
-      <Outlet />
+      <div className=" mx-auto p-3 sm:max-w-2xl md:max-w-4xl lg:max-w-7xl">
+        <Outlet />
+      </div>
     </div>
   );
 };
