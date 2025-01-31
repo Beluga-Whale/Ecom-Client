@@ -1,11 +1,13 @@
-import React from "react";
 import ProductCard from "../components/ProductCard";
+import Search from "../components/Search";
 
 const Home = () => {
   return (
     <>
       {/* Search */}
-      <div className="bg-red-200  p-4 ">Search</div>
+      <div className="bg-red-200 p-4 ">
+        <Search />
+      </div>
       <div className=" lg:flex gap-4 ">
         {/* Product */}
 
