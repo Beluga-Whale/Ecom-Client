@@ -52,6 +52,7 @@ const Home = () => {
             </button>
             {pages.map((item) => (
               <button
+                key={item}
                 onClick={() => handlePageChange(item)}
                 disabled={currentPage === item}
               >
