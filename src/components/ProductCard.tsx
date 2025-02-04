@@ -1,10 +1,13 @@
+import { useDispatch } from "react-redux";
 import { ProductsResponse, ProductsTypes } from "../types/products.type";
+import { setProductGetPrice } from "../features/products/productSlice";
 
 type ProductCardProps = {
   productData: ProductsResponse | undefined;
 };
 
 const ProductCard = ({ productData }: ProductCardProps) => {
+  const dispatch = useDispatch();
   return (
     <>
       {productData?.data?.map((item: ProductsTypes) => (
@@ -25,7 +28,21 @@ const ProductCard = ({ productData }: ProductCardProps) => {
 
             <div className="flex justify-between pt-4">
               <p>{item?.price}</p>
-              <p className="bg-red-500 px-6 text-white">Buy</p>
+              <button
+                className="bg-red-500 px-6 text-white"
+                onClick={() =>
+                  dispatch(
+                    setProductGetPrice([
+                      {
+                        _id: item._id,
+                        quantity: 1,
+                      },
+                    ])
+                  )
+                }
+              >
+                Buy
+              </button>
             </div>
           </div>
         </div>

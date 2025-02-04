@@ -1,3 +1,4 @@
+import Cart from "../components/Cart";
 import ProductCard from "../components/ProductCard";
 import Search from "../components/Search";
 import { useGetProducts } from "../queryAPI/productsAPI";
@@ -79,7 +80,9 @@ const Home = () => {
           </div>
         </div>
         {/* Cart */}
-        <div className="bg-yellow-200 lg:w-1/4 p-4">Cart</div>
+        <div className="bg-yellow-200 lg:w-1/4 p-4">
+          <Cart />
+        </div>
       </div>
     </>
   );

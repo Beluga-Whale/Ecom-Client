@@ -4,7 +4,7 @@ export type ProductsTypes = {
   imgProduct: string;
   desc: string;
   price: number;
-  stock: number;
+  quantity: number;
 };
 
 export type ProductsResponse = {
