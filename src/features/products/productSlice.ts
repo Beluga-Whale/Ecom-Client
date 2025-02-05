@@ -11,12 +11,7 @@ export const productSlice = createSlice({
   name: "product",
   initialState,
   reducers: {
-    setProductGetPrice: (
-      state,
-      action: PayloadAction<
-        Omit<ProductsTypes, "name" | "imgProduct" | "desc" | "price">[]
-      >
-    ) => {
+    setProductGetPrice: (state, action: PayloadAction<ProductsTypes[]>) => {
       const productItem = action.payload;
 
       productItem.forEach((product) => {

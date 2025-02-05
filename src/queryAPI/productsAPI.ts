@@ -29,7 +29,7 @@ export const useUpdateCart = () => {
     mutationFn: (
       products: Omit<ProductsTypes, "name" | "imgProduct" | "desc" | "price">[]
     ) => {
-      return axios.post(`${api_url}products/calculate-price`, products);
+      return axios.post(`${api_url}carts/calculate-price`, products);
     },
   });
 };

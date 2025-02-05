@@ -34,7 +34,7 @@ const ProductCard = ({ productData }: ProductCardProps) => {
                   dispatch(
                     setProductGetPrice([
                       {
-                        _id: item._id,
+                        ...item,
                         quantity: 1,
                       },
                     ])
