@@ -2,10 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
 import { ProductsTypes } from "../../types/products.type";
 
-const initialState: Omit<
-  ProductsTypes,
-  "name" | "imgProduct" | "desc" | "price"
->[] = [];
+const initialState: ProductsTypes[] = [];
 
 export const productSlice = createSlice({
   name: "product",
@@ -21,15 +18,21 @@ export const productSlice = createSlice({
         );
 
         if (existProduct !== -1) {
-          state[existProduct].quantity += 1;
+          state[existProduct].quantity += product.quantity;
         } else {
           state.push(...action.payload);
         }
       });
     },
+    deleteProduct: (state, actions: PayloadAction<string>) => {
+      return state.filter((item) => item._id !== actions.payload);
+    },
+
+    clearCart: () => initialState,
   },
 });
 
-export const { setProductGetPrice } = productSlice.actions;
+export const { setProductGetPrice, deleteProduct, clearCart } =
+  productSlice.actions;
 
 export default productSlice.reducer;
