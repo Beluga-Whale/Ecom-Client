@@ -1,6 +1,5 @@
 import Cart from "../components/Cart";
 import ProductCard from "../components/ProductCard";
-import Search from "../components/Search";
 import { useGetProducts } from "../queryAPI/productsAPI";
 import { useEffect, useState } from "react";
 
@@ -28,16 +27,12 @@ const Home = () => {
   if (isLoading) return null;
   return (
     <>
-      {/* Search */}
-      <div className="bg-red-200 p-4 ">
-        <Search />
-      </div>
       <div className=" lg:flex gap-4 ">
         {/* Product */}
 
-        <div className="bg-green-200 lg:w-3/4 lg:min-h-screen p-4 ">
+        <div className="bg-slate-100 lg:w-3/4 lg:min-h-screen p-4 ">
           <p> สินค้า</p>
-          <div className="grid xs:grid-cols-2 md:grid-cols-3 mt-4 ">
+          <div className="grid xs:grid-cols-2 md:grid-cols-3 mt-4 gap-3 ">
             {/* Product Card */}
             <ProductCard productData={productData} />
           </div>
@@ -80,7 +75,7 @@ const Home = () => {
           </div>
         </div>
         {/* Cart */}
-        <div className="bg-yellow-200 lg:w-1/4 p-4">
+        <div className="bg-slate-100 lg:w-1/4 p-4">
           <Cart />
         </div>
       </div>

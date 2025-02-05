@@ -25,13 +25,13 @@ const CardCart = ({ product }: CardCartProps) => {
                 alt=""
                 className="w-20 h-20 object-cover rounded-lg"
               />
-              <div>
-                <p>{item.name}</p>
+              <div className="ml-1">
+                <p className="font-semibold">{item.name}</p>
               </div>
             </div>
             <div>
               <button
-                className=" bg-slate-300 px-2"
+                className=" bg-slate-300 px-2 rounded-md  "
                 onClick={() =>
                   dispatch(
                     setProductGetPrice([
@@ -48,7 +48,7 @@ const CardCart = ({ product }: CardCartProps) => {
               </button>{" "}
               {item.quantity}{" "}
               <button
-                className="bg-slate-300 px-2"
+                className="bg-slate-300 px-2 rounded-md"
                 onClick={() =>
                   dispatch(
                     setProductGetPrice([
@@ -66,10 +66,13 @@ const CardCart = ({ product }: CardCartProps) => {
           </div>
           {/* NOTE - Right */}
           <div className="flex flex-col justify-between">
-            <button onClick={() => dispatch(deleteProduct(item?._id))}>
+            <button
+              className="w-5 rounded-full self-end hover:bg-slate-500 hover:text-white"
+              onClick={() => dispatch(deleteProduct(item?._id))}
+            >
               X
             </button>
-            <p>{item.price * item.quantity}</p>
+            <p>{item.price * item.quantity} บาท</p>
           </div>
         </div>
       ))}
